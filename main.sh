@@ -1,2 +1,2 @@
-bash configure.h
+bash configure.sh
 streamlit run home.py
