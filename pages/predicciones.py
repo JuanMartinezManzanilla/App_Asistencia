@@ -6,6 +6,7 @@ import time
 import os
 from twilio.rest import Client
 from dotenv import load_dotenv
+
 st.set_page_config(page_title='Asistencia', layout='wide')
 st.subheader('Asistencia')
 
@@ -49,6 +50,6 @@ def video_frame_callback(frame):
 
 webrtc_streamer(key="realtimePrediction", video_frame_callback=video_frame_callback,
 rtc_configuration={
-        "iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]
+        "iceServers": token.ice_servers
     }
 )
