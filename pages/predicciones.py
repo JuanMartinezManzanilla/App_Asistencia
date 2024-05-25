@@ -24,7 +24,7 @@ def video_frame_callback(frame):
     img = frame.to_ndarray(format="bgr24") # 3 dimension numpy array
     # operation that you can perform on the array
     pred_img = realtimepred.face_prediction(img,redis_face_db,
-                                        'facial_features',['name','Role'],thresh=0.5)
+                                        'facial',['name','Role'],thresh=0.5)
 
     timenow = time.time()
     difftime = timenow - setTime
