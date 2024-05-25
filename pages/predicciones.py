@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 st.set_page_config(page_title='Asistencia', layout='wide')
 st.subheader('Asistencia')
 
-load_dotenv()  # Cargar variables desde el archivo .env
+load_dotenv('credenciales/.env')  # Cargar variables desde el archivo .env
 
 account_sid = os.getenv('ACCOUNT_SID')
 auth_token = os.getenv('AUTH_TOKEN')
