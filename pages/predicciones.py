@@ -1,4 +1,4 @@
-from home import st
+import streamlit as st
 from home import face_rec
 from streamlit_webrtc import webrtc_streamer
 import av
