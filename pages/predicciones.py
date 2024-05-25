@@ -3,9 +3,19 @@ from home import face_rec
 from streamlit_webrtc import webrtc_streamer
 import av
 import time
+import os
+from twilio.rest import Client
+from dotenv import load_dotenv
 st.set_page_config(page_title='Asistencia', layout='wide')
 st.subheader('Asistencia')
 
+load_dotenv()  # Cargar variables desde el archivo .env
+
+account_sid = os.getenv('ACCOUNT_SID')
+auth_token = os.getenv('AUTH_TOKEN')
+client = Client(account_sid, auth_token)
+
+token = client.tokens.create()
 
 with st.spinner('Extrayendo información de Redis'):
     redis_face_db = face_rec.retrive_data(name='academy:register')
